@@ -27,7 +27,7 @@ If you are new to Git and GitHub, or you need a git refresher, you can use the t
 
 After you send me your GitHub username, I'll set up a GitHub repo for you that is within the private GitHub space for this class. I'll email you when it's ready to go. This repo is not public (i.e. not open to the world). You and I both have write access to this repo. Clone it to your computer using whatever method you prefer.   I usually do this from the command line as follows:
 
-1. Go to the class GitHub organization: https://github.com/EBIO5460Spring2025.
+1. Go to the class GitHub organization: https://github.com/EBIO5460Spring2026.
 2. Find your repo. It should be visible on the `Repositories` tab. Your repo is called `ml4e_firstname-lastinitial`.
 3. From the green `Code` button in your repo on GitHub, copy the repo's URL to the clipboard.
 4. Open a terminal on your computer and use `cd` to navigate to the location you want to put your repository.
