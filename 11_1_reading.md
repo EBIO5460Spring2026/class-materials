@@ -19,6 +19,9 @@ You need to read the paper plus submit a small written reflection (except for th
 ## Questions to consider for the papers
 
 * What is the general prediction goal of the model(s) in this paper?
+  * broad: regression or classification?
+  * detail: the science perspective
+
 * Describe the response (predicted) variable
 * Describe the predictor variables and any feature engineering (e.g. transformations, augmentation)
 * Describe the scope of inference
