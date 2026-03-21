@@ -5,12 +5,12 @@ There will be no class on Tuesday (use this time to research your discussion pap
 You need to read the paper plus submit a small written reflection. The reflection should be **pushed to github before class**.  You won't get credit for the discussion unless you push to github before class. The reflection should include your thoughts on each of the questions under "questions to consider" below. It can be very brief and in bullet-point form but feel free to expand if you prefer.
 
 
-**Thursday**
+## Thursday
 
 * Valavi R, Guillera-Arroita G, Lahoz-Monfort JJ, Elith J (2021). Predictive performance of presence-only species distribution models: a benchmark study with reproducible code. *Ecological Monographs* 0:e01486. https://doi.org/10.1002/ecm.1486.
 * This is a case study using a range of machine learning algorithms, including random forest and boosting (but not deep learning)
 * Questions to consider:
-  * Is the prediction task regression or classification?
+  * Is the prediction task regression or classirfication?
   * Describe the scope of inference.
     * What data and context are the authors hoping to generalize from and to?
     * What aspects of the work appear to be in distribution or in sample?
