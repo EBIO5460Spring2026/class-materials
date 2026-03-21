@@ -4,30 +4,34 @@ Below are assignment due dates and a plan or record of the topics we covered eac
 
 
 
-
 ## Assignment due dates
+
 | Assignment                       | Due             |
 | -------------------------------- | --------------- |
 | 1 (LOOCV)                        | Tue 27 Jan (Week 4) |
 | 2 (classification, KNN)          | Thu 5 Feb (Week 5)  |
 | 3 (decision trees, bagging)      | Thu 19 Feb (Week 7) |
 | 4 (boosting)                     | Thu 5 Mar (Week 9) |
-| 5 (neural networks)              | TBA (Week 12)   |
-| Individual project presentations | TBA finals week |
-| Individual project code or paper | TBA finals week |
+| 5 (neural networks)              | Thu 26 Mar (Week 11) |
+| Individual project presentations | Thu 30 Apr 4:30-7PM (finals week) |
+| Individual project code or paper | Sun 3 May (finals week) |
 
 
 
 ## Discussions
 
-| Lead | Week | Day  | Date.... | Paper |
-| ---- | ---- | ---- | -------- | ----- |
-| TBA  | 10   | Tue  | TBA      | TBA.  |
-|      |      |      |          |       |
-|      |      |      |          |       |
-|      |      |      |          |       |
-|      |      |      |          |       |
-|      |      |      |          |       |
+| Lead | Week | Day  | Date.... | Paper                                                        |
+| ---- | ---- | ---- | -------- | ------------------------------------------------------------ |
+| PM   | 11   | Tue  | 24 Mar   | Dallas et al (2017). Predictability of helminth parasite host range using information on geography, host traits and parasite community structure. |
+| KG   | 11   | Thu  | 26 Mar   | Capinha et al (2021). Deep learning for supervised classification of temporal data in ecology. |
+| MS   | 12   | Tue  | 31 Mar   | Maslov et al (2025). Globally scalable glacier mapping by deep learning matches expert delineation accuracy. |
+| LS   | 12   | Thu  | 2 Apr    | Keck et al (2023). A combination of machine-learning and eDNA reveals the genetic signature of environmental change at the landscape levels. |
+| SN   | 13   | Tue  | 7 Apr    | Ghani et al (2023). Global birdsong embeddings enable superior transfer learning for bioacoustic classification. |
+| AlR  | 13   | Thu  | 9 Apr    | Brieuc et al (2018). A practical introduction to Random Forest for genetic association studies in ecology and evolution. |
+| AW   | 14   | Tue  | 14 Apr   | Ramoneda et al (2023). Building a genome-based understanding of bacterial pH preferences. |
+| NP   | 14   | Thu  | 16 Apr   | Avsec et al (2026) Advancing regulatory variant effect prediction with AlphaGenome. |
+| AbR  | 15   | Tue  | 21 Apr   | Lamperti et al (2023). New deep learning-based methods for visualizing ecosystem properties using environmental DNA metabarcoding data. |
+| AG   | 15   | Thu  | 23 Apr   | Wang et al (2024). Identifying keystone species in microbial communities using deep learning. |
 
 
 
@@ -145,5 +149,5 @@ Below are assignment due dates and a plan or record of the topics we covered eac
 
 ## Weeks 10-15
 
-* Reading and discussion: contemporary and emerging applications in ecology
+* Reading and discussion: contemporary and emerging applications in ecology and evolution
 * Individual project
