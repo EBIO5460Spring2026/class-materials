@@ -2,10 +2,10 @@
 
 I am working with Research Computing to figure out how to install Keras 3. As often happens, installing the tool chain for GPU can be a challenge. For now, the below is for Keras 2, which is working. This install is for both Python and R.
 
-Request transfer to a GPU compute node for 45 mins.
+Request transfer to a GPU compute node for 60 mins.
 
 ```bash
-sinteractive --partition=atesting_a100 --time=0:45:00 --nodes=1 --ntasks=8 --gres=gpu:1 --qos=testing
+sinteractive --partition=atesting_a100 --time=0:60:00 --nodes=1 --ntasks=4 --gres=gpu:1 --qos=testing
 ```
 
 Your prompt will change to something like:
@@ -47,16 +47,16 @@ You should see the environment change in your prompt
 Now install all the needed software. This may take as long as 20 minutes.
 
 ```bash
-conda install r python=3.11 tensorflow-gpu=2.15.0 tensorflow-hub tensorflow-datasets scipy requests Pillow h5py pandas pydot -c conda-forge
+conda install r python=3.11.8 tensorflow-gpu=2.15.0 tensorflow-hub tensorflow-datasets scipy requests Pillow h5py pandas pydot -c conda-forge
 ```
 
 
 
 ## Check Python keras
 
-Start Python by typing `python3` at the prompt.  Work through this example to check that everything is working. This is the canonical keras example. To use keras in the future you'll need to activate the conda environment we set up above.
+Start Python by typing `python` at the prompt.  Work through this example to check that everything is working. This is the canonical keras example. To use keras in the future you'll need to activate the conda environment we set up above.
 
-```r
+```python
 import tensorflow as tf
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.models import Sequential
@@ -69,8 +69,7 @@ print("Num GPUs Available:", len(tf.config.list_physical_devices('GPU')))
 print(tf.config.list_physical_devices('GPU'))
 
 # Mnist handwritten letters dataset
-x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
-
+(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
 # reshape
 x_train = x_train.reshape(x_train.shape[0], 784).astype("float32")
@@ -101,8 +100,8 @@ model.compile(
 
 model.summary()
 
+# Fit should use GPU. It will take a few moments to set up the GPU the first time:
 
-#history = 
 model.fit(
     x_train, y_train,
     batch_size=128,
@@ -110,17 +109,11 @@ model.fit(
     validation_split=0.2
 )
 
-# Fit should use GPU. It will take a few moments to set up the GPU the first time.
-
-
 weights = model.get_weights()
-print("Number of weight tensors:", len(weights))
-
-
-#R: get_weights(model)
+print("Number of tensors:", len(weights)) #should be 6
 ```
 
-When you've finished with Python, type `q()` to quit R.  To end your session on the 
+When you've finished with Python, type `quit()`. Continue to the next section and test R. 
 
 
 
@@ -128,7 +121,7 @@ When you've finished with Python, type `q()` to quit R.  To end your session on 
 
 Start R by typing `R` at the prompt. Install the `keras` library. This will install the package for keras 2, which is what we want for now (keras3 is not compatible with the version of tensorflow we installed above).
 
-```
+```R
 install.packages("keras")
 ```
 
@@ -136,7 +129,7 @@ You will need to install any other R packages you want to use, such as`dplyr`, t
 
 Now we can use the R keras library. Work through this example to check that everything is working. This is the canonical keras example.
 
-```r
+```R
 # Tell reticulate which conda environment to use
 reticulate::use_condaenv(condaenv = "r-tf2150py3118")
 
@@ -177,11 +170,16 @@ model <- keras_model_sequential(input_shape = c(784)) |>
 compile(model, loss='categorical_crossentropy', optimizer=optimizer_rmsprop(),
         metrics=c('accuracy'))
 
+print(model)
+
+# Fit should use GPU. It will take a few moments to set up the GPU the first time:
+
 fit(model, x_train, y_train, epochs=30, batch_size=128, validation_split=0.2)
 
-# Fit should use GPU. It will take a few moments to set up the GPU the first time.
-
-get_weights(model)
+weights <- get_weights(model)
+paste("Number of tensors:", length(weights)) #should be 6
 ```
 
-When you have finished with R, type `q()` to quit R.  To end your session on the compute node, type `exit`. This will bring you back to the login node. You might want to type `clear` to clear the screen as the prompt will often jump to somewhere randomly in the printed output. To logout, type `logout`.
+When you've finished with R, type `q()` and choose "no" to not save the workspace image.
+
+To end your session on the compute node, type `exit`. This will bring you back to the login node. You might want to type `clear` to clear the screen as the prompt will often jump to somewhere randomly in the printed output. To logout, type `logout`.
