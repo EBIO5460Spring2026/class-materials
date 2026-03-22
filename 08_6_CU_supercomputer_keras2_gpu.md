@@ -1,6 +1,8 @@
-## Install tool chain for R keras on Alpine GPU
+## Install tool chain for keras v2 on Alpine GPU
 
-I am working with Research Computing to figure out how to install Keras 3. As often happens, installing the tool chain for GPU can be a challenge. For now, the below is for Keras 2, which is working. This install is for both Python and R.
+This install is for both **Python** and **R**.
+
+I am working with Research Computing to figure out how to install Keras 3. As often happens, installing the tool chain for GPU can be a challenge. For now, the below is for Keras 2, which is working.
 
 Request transfer to a GPU compute node for 60 mins.
 
