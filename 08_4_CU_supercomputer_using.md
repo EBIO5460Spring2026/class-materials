@@ -379,10 +379,81 @@ In the above, adjust `time`, `nodes`, `ntasks`, and `gres` as needed. A node is 
 
 ### Submitted jobs
 
-These nodes are used for jobs submitted to the scheduler. They are:
+For longer or larger computing jobs, we need to use the supercomputer's batch processing mechanism. This requires us to submit a job via **slurm**, which is scheduling software that manages all the jobs submitted by users of the supercomputer. These nodes are used for jobs submitted to the scheduler:
 
 * **amilan**: CPU workflows
 * **aa100**: GPU workflows
   * max: 16 GPUs
 
-These are specified in a job script. See later for how to do that.
+#### Template slurm script
+
+To submit a job, we need to write a script to ask for the resources we need, set up the computing environment, and run our code. In the following example, we are asking for a job on `aa100` , the GPU partition of the CU supercomputer. Each node has 64 CPU cores and 3 GPUs. We'll ask for 1 node with 4 cores (we are using the GPUs for compute and don't need much CPU compute) and 3 GPUs. We'll ask for a maximum time of 15 minutes. Specify a quality of service (qos). Enter your email address. Enter a filename for the output file. This is set up for a conda environment. Enter the name of the conda environment. Delete the lines related to a conda environment if not using. The lines with `echo` will print to the output file along with any text sent to the output stream. Enter the command for the line that runs the actual scientific code.
+
+
+```bash
+#!/bin/bash
+
+#SBATCH --partition=aa100        #GPU=aa100, CPU=amilan
+#SBATCH --nodes=1
+#SBATCH --ntasks=4               #number of cores per node (max 64)
+#SBATCH --gres=gpu:3             #number of GPUs per node (max 3)
+#SBATCH --time=00:15:00          #hours:minutes:seconds
+#SBATCH --qos=normal             #for jobs longer than 1 day this needs to be qos=long
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=put_your_email_address_here
+#SBATCH --output=my_job_%j.out #output file (%j adds job id)
+
+echo "== Starting Job =="
+
+echo "== Loading conda module =="
+module purge
+module load anaconda
+
+echo "== Activating conda environment =="
+conda activate put_name_of_conda_env_here
+
+echo "== Starting scientific code =="
+put bash command to start your parallel code here
+
+echo "== End of Job =="
+```
+
+Save the above to a script file, e.g. `my_long_job.sh`
+
+Check the file
+
+```
+cat my_long_job.sh
+```
+
+Now we can submit the job to the slurm system, which will put it in the queue.
+
+```
+sbatch my_long_job.sh
+```
+
+When the job starts and again when it finishes, you'll be sent an email. We can also check on its status in the queue:
+
+```bash
+squeue --user=put_your_user_name_here --start
+```
+
+See explanatory codes for squeue [here](https://curc.readthedocs.io/en/latest/running-jobs/squeue-status-codes.html).
+
+When the job is finished, the output will be in the file named `my_job_<job_number>.out`, where the job number is appended to the file name by slurm. Type `ls` to see the current files in the working directory, and type:
+
+```bash
+cat my_job_<job_number>.out
+```
+
+Useful commands for managing your jobs
+
+https://curc.readthedocs.io/en/latest/running-jobs/slurm-commands.html#
+
+https://curc.readthedocs.io/en/latest/running-jobs/squeue-status-codes.html
+
+```
+squeue --user=your_username   #check status of jobs in queue
+scancel your_job-id           #cancel a job
+sstat --jobs=your_job-id      #info about an actively running job
+```
