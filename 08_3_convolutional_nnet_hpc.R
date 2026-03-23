@@ -1,6 +1,6 @@
 # First log in to research computing
 # Transfer to GPU node
-#   sinteractive --partition=atesting_a100 --time=0:60:00 --nodes=1 --ntasks=8 --gres=gpu:1 --qos=testing
+#   sinteractive --partition=atesting_a100 --time=0:30:00 --nodes=1 --ntasks=4 --gres=gpu:1 --qos=testing
 # Change to project directory
 #   cd /projects/<username>/ml4e
 # Start conda
@@ -21,8 +21,6 @@ tensorflow::tf_gpu_configured(verbose = TRUE) #check GPU, status TRUE is good
 library(keras3)
 
 # Load and prepare data
-
-# library(dplyr)
 source("source/prep_cifar56eco.R")
 if ( !file.exists("data_large/cifar56eco.RData") ) {
     prep_cifar56eco()
@@ -59,7 +57,7 @@ compile(modcnn1, loss="categorical_crossentropy", optimizer="rmsprop",
         metrics="accuracy")
 fit(modcnn1, x_train, y_train, epochs=60, batch_size=128, 
     validation_split=0.2) -> history
-save_model(modcnn1, "saved/modcnn1")
+save_model(modcnn1, "saved/modcnn1.keras")
 save(history, file="saved/modcnn1_history.Rdata")
 
 # Test set prediction
@@ -102,7 +100,7 @@ compile(modcnn2, loss="categorical_crossentropy", optimizer="rmsprop",
         metrics="accuracy")
 fit(modcnn2, x_train, y_train, epochs=30, batch_size=128, 
     validation_split=0.2) -> history
-save_model(modcnn2, "saved/modcnn2")
+save_model(modcnn2, "saved/modcnn2.keras")
 save(history, file="saved/modcnn2_history.Rdata")
 
 # Test set prediction
