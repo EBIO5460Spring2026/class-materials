@@ -33,7 +33,43 @@ x_test <- x_test / 255
 y_train_int <- y_train #copy of integer version for labeling later
 y_train <- to_categorical(y_train, 56) #convert integer response to dummy
 
-# Specify the model
+
+# Specify model 1
+modcnn1 <- keras_model_sequential(input_shape=c(32,32,3)) |>
+    #   1st convolution-pool layer sequence
+    layer_conv_2d(filters=6, kernel_size=c(2,2), padding="same") |>
+    layer_max_pooling_2d(pool_size=c(2,2)) |>
+    layer_activation_relu() |>
+    #   2nd convolution-pool layer sequence    
+    layer_conv_2d(filters=12, kernel_size=c(2,2), padding="same") |> 
+    layer_max_pooling_2d(pool_size=c(2,2)) |>
+    layer_activation_relu() |> 
+    #   3rd convolution-pool layer sequence    
+    layer_conv_2d(filters=24, kernel_size=c(2,2), padding="same") |> 
+    layer_max_pooling_2d(pool_size=c(2,2)) |>
+    layer_activation_relu() |> 
+    #   Flatten (384 nodes)
+    layer_flatten() |>
+    #   Dense connection to output layer with softmax (56 categories to predict)    
+    layer_dense(units=56) |> 
+    layer_activation_softmax()
+
+# Compile, train, save
+compile(modcnn1, loss="categorical_crossentropy", optimizer="rmsprop",
+        metrics="accuracy")
+fit(modcnn1, x_train, y_train, epochs=60, batch_size=128, 
+    validation_split=0.2) -> history
+save_model(modcnn1, "saved/modcnn1")
+save(history, file="saved/modcnn1_history.Rdata")
+
+# Test set prediction
+pred_prob <- predict(modcnn1, x_test)
+save(pred_prob, file="saved/modcnn1_pred_prob.Rdata")
+pred_cat <- max.col(pred_prob) - 1  #subtract 1 because categories start at zero
+mean(pred_cat == drop(y_test))
+
+
+# Specify model 2
 modcnn2 <- keras_model_sequential(input_shape=c(32,32,3)) |>
     #   1st convolution-pool layer sequence
     layer_conv_2d(filters=32, kernel_size=c(3,3), padding="same") |>
