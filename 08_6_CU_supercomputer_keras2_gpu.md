@@ -1,8 +1,6 @@
 ## Install tool chain for keras v2 on Alpine GPU
 
-This install is for both **Python** and **R**.
-
-I am working with Research Computing to figure out how to install Keras 3. As often happens, installing the tool chain for GPU can be a challenge. For now, the below is for Keras 2, which is working.
+This install is for both **Python** and **R**. This workflow was created in March 2025 and tested in March 2026.
 
 Request transfer to a GPU compute node for 60 mins.
 
@@ -34,6 +32,8 @@ indicating that you are in the base conda environment. We now want to set up an 
 conda create --name r-tf2150py3118
 ```
 
+You may see a warning that conda needs to be updated. We don't have control of this. The version of conda is managed by the supercomputer admins. Ignore the warning. You will be asked to confirm to proceed with creating the new environment. Choose yes.
+
 Now activate that environment
 
 ```bash
@@ -59,7 +59,7 @@ conda install r python=3.11.8 tensorflow-gpu=2.15.0 tensorflow-hub tensorflow-da
 Start Python by typing `python` at the prompt.  Work through this example to check that everything is working. This is the canonical keras example. To use keras in the future you'll need to activate the conda environment we set up above.
 
 ```python
-import tensorflow as tf
+import tensorflow as tf #there will be several warnings that can be ignored
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
@@ -103,7 +103,6 @@ model.compile(
 model.summary()
 
 # Fit should use GPU. It will take a few moments to set up the GPU the first time:
-
 model.fit(
     x_train, y_train,
     batch_size=128,
@@ -175,7 +174,6 @@ compile(model, loss='categorical_crossentropy', optimizer=optimizer_rmsprop(),
 print(model)
 
 # Fit should use GPU. It will take a few moments to set up the GPU the first time:
-
 fit(model, x_train, y_train, epochs=30, batch_size=128, validation_split=0.2)
 
 weights <- get_weights(model)
