@@ -1,4 +1,4 @@
-# Discussion papers for week 11
+# Discussion papers for week 12
 
 You need to read the paper plus submit a small written reflection (except for the discussion leader). The reflection should be **pushed to github before class**.  You won't get credit for the discussion unless you push to github before class. The reflection should include your thoughts on each of the questions under "questions to consider" below. It can be very brief and in bullet-point form but feel free to expand if you prefer.
 
