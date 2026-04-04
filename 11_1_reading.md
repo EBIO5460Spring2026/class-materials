@@ -17,22 +17,22 @@ You need to read the paper plus submit a small written reflection (except for th
 
 
 ## Questions to consider for the papers
+(Depending on the paper, not all are necessarily relevant or might need to be adapted, e.g. if there are multiple examples you could pick one)
 
 * What is the general prediction goal of the model(s) in this paper?
   * broad: regression or classification?
   * detail: the science perspective
-
 * Describe the response (predicted) variable
 * Describe the predictor variables and any feature engineering (e.g. transformations, augmentation)
 * Describe the scope of inference
-  * What data and context are the authors hoping to generalize from and to?
+  * Aspirational: What data and context are the authors hoping to generalize from and to?
   * What aspects of the work appear to be in distribution or in sample?
-  * Is there the possibility of test-set leakage?
-* How do the training and test data splits relate to the scope of inference?
+  * What is the realized SOI given the data (e.g. where, when, how collected) and inference design (e.g. train-test split)?
+* Is there the possibility of test-set leakage?
 * Describe the model algorithm used (e.g. architecture of NN)
 * How did they train, tune, and evaluate the model? (incl. what hyperparameters were tuned)
 * Is this an approach that wouldn't be possible without machine learning and how was it advantageous to use this specific machine learning method?
-* Do you have any critiques of the paper, either methodological or about the conclusions drawn?
+* Most papers have some problems! Do you have any critiques of the paper, either methodological or about the conclusions drawn?
 * 2-3 other bullet points, which might be insights or questions you want to raise in the discussion
 
 

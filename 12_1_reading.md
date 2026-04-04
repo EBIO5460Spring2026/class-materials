@@ -18,6 +18,7 @@ You need to read the paper plus submit a small written reflection (except for th
 
 
 ## Questions to consider for the papers
+(Depending on the paper, not all are necessarily relevant or might need to be adapted, e.g. if there are multiple examples you could pick one)
 
 * What is the general prediction goal of the model(s) in this paper?
   * broad: regression or classification?
@@ -34,6 +35,7 @@ You need to read the paper plus submit a small written reflection (except for th
 * Is this an approach that wouldn't be possible without machine learning and how was it advantageous to use this specific machine learning method?
 * Most papers have some problems! Do you have any critiques of the paper, either methodological or about the conclusions drawn?
 * 2-3 other bullet points, which might be insights or questions you want to raise in the discussion
+
 
 
 
