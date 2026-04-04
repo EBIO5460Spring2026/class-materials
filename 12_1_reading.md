@@ -13,7 +13,7 @@ You need to read the paper plus submit a small written reflection (except for th
 ## Thursday
 
 * Leader: LS
-* Keck et al (2023). Keck F, Brantschen J, Altermatt F (2023). A combination of machine-learning and eDNA reveals the genetic signature of environmental change at the landscape levels. Molecular Ecology 32: 4791-4800. https://doi.org/10.1111/mec.17073.
+* Keck et al (2023). A combination of machine-learning and eDNA reveals the genetic signature of environmental change at the landscape levels. Molecular Ecology 32: 4791-4800. https://doi.org/10.1111/mec.17073.
 
 
 
