@@ -13,7 +13,7 @@ Below are assignment due dates and a plan or record of the topics we covered eac
 | 3 (decision trees, bagging)      | Thu 19 Feb (Week 7) |
 | 4 (boosting)                     | Thu 5 Mar (Week 9) |
 | 5 (neural networks)              | Thu 26 Mar (Week 11) |
-| Individual project presentations | Thu 30 Apr 4:30-7PM (finals week) |
+| Individual project presentations | Thu 30 Apr 10AM-12:30 (finals week) |
 | Individual project code or paper | Sun 3 May (finals week) |
 
 

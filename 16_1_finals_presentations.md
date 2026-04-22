@@ -1,6 +1,6 @@
 ### Finals week project presentations
 
-Thursday 30 Apr 4:30-7 (trying to find a better time, stay tuned)
+Thursday 30 Apr 10AM-12:30
 
 Aim for 10 mins + 5 mins questions
 The main goal of this presentation is to **teach us what you learned**
