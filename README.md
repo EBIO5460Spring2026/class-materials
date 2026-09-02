@@ -1,5 +1,5 @@
 # class-materials
-**EBIO5460 Machine Learning for Ecology** Spring 2026\
+**EBIO5460 Machine Learning for Ecology and Evolution** Spring 2026\
 Department of Ecology and Evolutionary Biology\
 University of Colorado, Boulder\
 Instructor: Dr Brett Melbourne, brett.melbourne@colorado.edu\
@@ -18,9 +18,7 @@ Pronouns: he, him, his
 
 This repository includes lecture slides (pdf), code, and homework instructions. For the most part, where code is concerned you want to view the markdown (`.md`) files in your web browser from GitHub.com. These markdown files are knitted from the R code. You can also run the R or Python code on your computer from the `.R` or `.py` files.
 
-This is the second semester in a graduate-level "data science for ecology and evolution" sequence. Semester 1 is [here](https://github.com/EBIO5460Fall2025/class-materials).
-
-Previous iteration: [Machine Learning for Ecology 2025](https://github.com/EBIO5460Spring2025/class-materials).
+This is the second semester in a graduate-level "data science for ecology and evolution" sequence. Semester 1 is [here](https://github.com/EBIO5460Fall2025/class-materials). More information on the 4 semester sequence is [here](https://www.colorado.edu/lab/melbourne/courses)
 
 **Awesome papers that started as machine learning projects in previous iterations of this class:**
 
